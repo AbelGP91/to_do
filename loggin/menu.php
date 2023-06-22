@@ -8,9 +8,10 @@
 <body>
     <p>Benvingut a la teva base de dades</p>
     <label for="Menu">Escull l'opció desitjada</label>
-    <select name="opcions_menu" id="opcions_menu">
-        <option value="crear_tasca">Crear tasca</option>
-        <option value="llistar_tasques">Llistar tasques</option>
+    <br><br>
+    <button>
+        <a href="../menu/opcions/crearTascaIndex.php">Crear Tasca</a>
+    </button>
         
     </select>
 </body>
