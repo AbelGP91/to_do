@@ -47,19 +47,23 @@ while ($resultado = mysqli_fetch_array($tasques)){
     
 }
 
-echo '</table>';
-echo "<br>";
-
-echo '<div style="margin-left:10px"';
-echo '<p>Introdueix el Id de la tasca desitjada</p>';
-echo '<input type="text" name="idTarea" size="25" value="" required>';
-echo '</div>';
-
-echo '<div style="margin:20px 20px 20px 25px">';
-echo '<button type="button" onclick="">Ver</button>  <button type="button" onclick="">Modificar</button>  <button type="button" onclick="">Eliminar</button>';
-echo '</div>';
-
 $mysql->close();
 
 ?>
+
+</table>
+<br>
+
+<div style="margin-left:10px">
+<p>Introdueix el ID de la tasca desitjada</p>
+<input type="text" name="idTarea" size="25" value="" required>
+</div>
+
+<div style="margin:20px 20px 20px 25px"> <form action="opcionsTasques.php" method="post">
+
+    <input type="submit" name="veure" value ="Veure">
+    <input type="submit" name="modificar" value ="Modificar">
+    <input type="submit" name="borrar" value ="Borrar">
+
+</div>
 
