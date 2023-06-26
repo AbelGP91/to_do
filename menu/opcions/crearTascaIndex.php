@@ -7,6 +7,11 @@
     <p>CREAR TASCA - PHP</p>
 </head>
 <body>
+
+    <?php
+        session_start();
+        echo $_SESSION["idUsuario"];
+    ?>
     <form name="ALTA" method="post" action="crearTasca.php">
         <p>Introdueix la tasca</p>
         <input type="text" name="titulo" size="25" value="">

@@ -6,7 +6,11 @@
     <title>Menu</title>
 </head>
 <body>
-    <p>Benvingut a la teva base de dades</p>
+    <?php
+        session_start();
+        echo "ID Usuari = " . $_SESSION["idUsuario"] . "<br><br>"; 
+    ?>
+
     <label for="Menu">Escull l'opció desitjada</label>
     <br><br>
     <button>
@@ -15,5 +19,6 @@
     </button>
         
     </select>
+    
 </body>
 </html>
