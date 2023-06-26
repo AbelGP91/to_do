@@ -24,77 +24,49 @@
 
     }
 
-    
-/*
-    $sql = "SELECT usuari.nom_usuari, cognom1_usuari FROM to_do.usuari" 
-            or die($mysql->error);
-
-    $resultado = $mysql->query($sql);
-    
-    $row = mysqli_fetch_array($resultado);
-
-        echo "<br>";
-        var_dump ($row);
-        echo "<br>" . "<br>";
-        echo $row[0];
-        
-*/
-
 $email = $_POST['email'];
 $password = $_POST['password'];
 
+$sql = "SELECT usuari.email_usuari, usuari.password_usuari FROM to_do.usuari WHERE usuari.email_usuari LIKE '$email'" 
+            or die($mysql->error);
+
+$dadesLoggin = $mysql->query($sql);
+
+$resultado = mysqli_fetch_array($dadesLoggin);
+
+// var_dump($resultado);
+
 if (empty($email) or (empty($password))){
 
-    // echo "Introduce tus credenciales para poder acceder a la BDD";
     header('Location:errorLog.php');
 
 }
 
+else if (is_null($resultado)){  
+
+    echo "El usuario es incorrecto";
+
+}
+
 else {
+                  
+    if($password === $resultado[1]){
 
-    $sql = "SELECT usuari.email_usuari, usuari.password_usuari FROM to_do.usuari WHERE usuari.email_usuari LIKE '$email'" 
-            or die($mysql->error);
-
-    $dadesLoggin = $mysql->query($sql);
-
-    $resultado = mysqli_fetch_array($dadesLoggin);
-
-    echo "<br>";
-
-    // var_dump($resultado[0]); -> NULL
-    
-    // var_dump($resultado[1]); -> NULL
-         
-    if ($email === $resultado[0]){
-
-        if($password === $resultado[1]){
-
-            header('Location:menu.php');
-
-        }
-
-        else {
-
-            echo "La contraseña es incorrecta";
-                
-        }
+        header('Location:menu.php');
 
     }
 
-    else { 
-
-        echo "El usuario es incorrecto";
-            
+    else {
+        
+    echo "La contraseña es incorrecta";
+                    
     }
-    
-    }
-    
 
+}
 
+?> 
 
-
-
-?>  
 </body>
+
 </html>
 
