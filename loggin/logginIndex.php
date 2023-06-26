@@ -9,9 +9,9 @@
     
         <form action="loggin.php" name = "loggin" method="post">
             <p>Introdueix el teu email</p><br>
-            <input type="text" name="email" id="email">
+            <input type="text" name="email" id="email" required>
             <p>Introdueix el teu password</p> <br>
-            <input type="text" name="password" id="password"><br><br>
+            <input type="password" name="password" id="password" required><br><br>
             <input type="submit" value="Enviar">
         </form>
               

@@ -36,13 +36,15 @@ $resultado = mysqli_fetch_array($dadesLoggin);
 
 // var_dump($resultado);
 
-if (empty($email) or (empty($password))){
+/* if (empty($email) or (empty($password))){
 
     header('Location:errorLog.php');
 
 }
 
-else if (is_null($resultado)){  
+*/
+
+if (is_null($resultado)){  
 
     echo "El usuario es incorrecto";
 

@@ -14,15 +14,21 @@
     ?>
     <form name="ALTA" method="post" action="crearTasca.php">
         <p>Introdueix la tasca</p>
-        <input type="text" name="titulo" size="25" value="">
+        <input type="text" name="titulo" size="25" value="" required>
         <p>Introdueix una descripcio</p>
-        <input type="text" name="descripcio" id="descripcio">
+        <input type="text" name="descripcio" id="descripcio" required>
         <p>Introdueix la data d'inici</p>
-        <input type="datetime" name="dataInici" id="dataInici">
+        <input type="date" name="dataInici" id="dataInici" required>
         <p>Introdueix la data fi</p>
-        <input type="datetime" name="dataFi" id="dataFi">
-        <p>Estat</p>
-        <input type="text" name="estat">
+        <input type="date" name="dataFi" id="dataFi">
+        <p>Estat (escull l'opció desitjada):</p>
+        <input list = "estados" name = "estat" id = "estat" required>
+        <datalist id="estados">
+            <option> Pendent </option>
+            <option> En execució </option>
+            <option> Acabada </option>
+        </datalist>    
+        <!-- <input type="text" name="estat" required> -->
         <br><br>
         <input type="submit" value="Confirmar">
     </form>
