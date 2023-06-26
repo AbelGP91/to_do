@@ -15,7 +15,7 @@
     <br><br>
     <button>
         <a href="../menu/opcions/crearTascaIndex.php">Crear Tasca</a>
-        <a href="../menu/opcions/llistarTasques.php">Llistar Tasca</a>
+        <a href="../menu/opcions/llistarTasquesIndex.php">Llistar Tasca</a>
     </button>
         
     </select>
