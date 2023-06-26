@@ -23,26 +23,45 @@ $sql = "SELECT tasques.idTasques,tasques.nom_tasques FROM to_do.tasques WHERE ta
 
 $tasques = $mysql->query($sql);
 
-echo '<table class = "tablalistado">';
-echo '<tr><th>Código</th><th>Descripción</th></tr>';
+?>
+
+<h1>Llistat de Tasques</h1>
+
+<?php
+
+echo '<table class = "tablalistado" border="3" width="250px"';
+echo '<tr><th>ID</th><th>Descripción</th></tr>';
+
 
 while ($resultado = mysqli_fetch_array($tasques)){
 
-    echo '<tr>';
+    echo '<tr align="center">';
     echo '<td>';
     echo $resultado['idTasques'];
     echo '</td>';
     echo '<td>';
     echo $resultado['nom_tasques'];
+    // echo '<button type="button">Modificar</button>' . '<button type="button">Eliminar</button>';
     echo '</td>';
     echo '</tr>';
-
+    
 }
 
-echo '<table>';
+
+echo '</table>';
+echo "<br>";
+
+echo '<div style="margin-left: 50px">';
+echo '<button type="button" onclick="">Ver</button>  <button type="button" onclick="">Modificar</button>  <button type="button" onclick="">Eliminar</button>';
+echo '</div>';
+
+function ver(){
+
+    
+
+}
 
 $mysql->close();
 
 ?>
-    
-    
+
