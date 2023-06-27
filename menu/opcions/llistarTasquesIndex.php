@@ -1,4 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasques</title>
+</head>
 
+<body>
+    
 <?php
 
 session_start();
@@ -52,18 +61,29 @@ $mysql->close();
 ?>
 
 </table>
+
 <br>
 
-<div style="margin-left:10px">
-<p>Introdueix el ID de la tasca desitjada</p>
-<input type="text" name="idTarea" size="25" value="" required>
+<div style="margin:20px 20px 20px 25px"> 
+
+<form action="opcionsTasques.php" name="idSelect" method="post">
+
+    <p>Introdueix el ID de la tasca desitjada</p><br>
+    <input type="number" name="idTarea" size="25" required>
+    
+    <input type="submit" name="veure" value ="Veure"/>
+    <input type="submit" name="modificar" value ="Modificar"/>
+    <input type="submit" name="borrar" value ="Borrar"/>
+
+</form>
+
 </div>
 
-<div style="margin:20px 20px 20px 25px"> <form action="opcionsTasques.php" method="post">
+</body>
+</html>
 
-    <input type="submit" name="veure" value ="Veure">
-    <input type="submit" name="modificar" value ="Modificar">
-    <input type="submit" name="borrar" value ="Borrar">
 
-</div>
+
+
+
 
