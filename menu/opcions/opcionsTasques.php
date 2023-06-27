@@ -1,6 +1,8 @@
 <?php
 
 session_start();
+
+include "funcionsTasques.php";
     
     $mysql = new mysqli("localhost","root","","to_do");
 
@@ -55,19 +57,20 @@ echo "<br>" . "<br>";
 
 if ($opcioTasques === "Veure") { 
 
-    echo "Veure"; 
+    // echo "Veure";
+    veureTasques($idTarea); 
 
 }
 
 if ($opcioTasques === "Modificar") { 
 
-    echo "Mod"; 
+    // echo "Mod"; 
 
 }
 
 if ($opcioTasques === "Borrar") { 
 
-    echo "Delete"; 
+    // echo "Delete"; 
 
 }
 
