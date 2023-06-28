@@ -64,14 +64,14 @@ $mysql->close();
 
 <br>
 
-<div style="margin:20px 20px 20px 25px"> 
+<div style="margin:20px 20px 20px 0px"> 
 
 <form action="opcionsTasques.php" name="idSelect" method="post">
 
-    <p>Introdueix el ID de la tasca desitjada</p><br>
-    <input type="number" name="idTarea" size="25" required>
+    <p style="margin-left:10px">Introdueix el ID de la tasca desitjada</p><br>
+    <input style="margin-left:20px" type="number" name="idTarea" size="25" required><br><br>
     
-    <input type="submit" name="veure" value ="Veure"/>
+    <input style="margin-left:20px" type="submit" name="veure" value ="Veure"/>
     <input type="submit" name="modificar" value ="Modificar"/>
     <input type="submit" name="borrar" value ="Borrar"/>
 

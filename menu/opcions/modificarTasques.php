@@ -1,6 +1,11 @@
 <?php
-$idTarea = $_POST['idTarea'];
+
+// if(isset($_POST['idTarea'])){} 
+
+$idTarea=$_POST['idTarea'];
+
 echo $idTarea;
-echo "Buenas tardes";
+
+
 
 ?>

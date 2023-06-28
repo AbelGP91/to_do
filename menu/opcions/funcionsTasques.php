@@ -8,34 +8,14 @@ function veureTasques($idTarea){
     $id = $_SESSION['idUsuario'];
 
     $mysql = new mysqli("localhost","root","","to_do");
-
-    /*
-
-    if ($mysql->connect_error){
-
-        die("Problemas con la conexión a la base de datos");
-
-    }
-
-    else {
-
-        echo "Se ha conectado satisfactoriamente a la BDD" . "<br>" . "<br>";
-
-    }
-
-    */
-
-    // echo $idTarea;
-
+    
     $sql = "SELECT tasques.idTasques, tasques.nom_tasques, tasques.descrip_tasques, tasques.estat_tasques, tasques.inici_tasques, tasques.fi_tasques, tasques.Usuario_idUsuario 
             FROM to_do.tasques WHERE tasques.idTasques LIKE '$idTarea'
             " 
             or die($mysql->error);
 
     $tasques = $mysql->query($sql);
-
-    // AND tasques.Usuario_idUsuario LIKE '$id'
-    
+        
     $resultado = mysqli_fetch_array($tasques);
 
     if(isset($resultado['Usuario_idUsuario'])){
@@ -138,8 +118,8 @@ function modificarTasques($idTarea){
         <option> Pendent </option>
         <option> En execució </option>
         <option> Acabada </option>
-    </datalist>    
-    <!-- <input type="text" name="estat" required> -->
+    </datalist>
+    <input type="hidden" name="idTarea" value='<?php echo "$idTarea";?>'> 
     <br><br>
     <input type="submit" value="Confirmar">
 
