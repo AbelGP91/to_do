@@ -107,13 +107,13 @@ function modificarTasques($idTarea){
     <p>Actualitzar nom</p>
     <input type="text" name="titulo" size="25" value="">
     <p>Actualitzar descripció</p>
-    <input type="text" name="descripcio" id="descripcio">
+    <input type="text" name="descripcio" id="descripcio" value="">
     <p>Actualitzar data inici</p>
-    <input type="date" name="dataInici" id="dataInici">
+    <input type="date" name="dataInici" id="dataInici" value="">
     <p>Actualitzar data fi </p>
-    <input type="date" name="dataFi" id="dataFi">
+    <input type="date" name="dataFi" id="dataFi" value="">
     <p>Actualitzar estat</p>
-    <input list = "estados" name = "estat" id = "estat">
+    <input list = "estados" name = "estat" id = "estat" value="">
     <datalist id="estados">
         <option> Pendent </option>
         <option> En execució </option>
