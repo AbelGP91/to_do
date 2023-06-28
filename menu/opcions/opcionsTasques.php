@@ -64,7 +64,8 @@ if ($opcioTasques === "Veure") {
 
 if ($opcioTasques === "Modificar") { 
 
-    // echo "Mod"; 
+    // echo "Mod";
+    modificarTasques($idTarea); 
 
 }
 
@@ -73,9 +74,6 @@ if ($opcioTasques === "Borrar") {
     // echo "Delete"; 
 
 }
-
-
-
 
     $mysql->close();
 

@@ -35,15 +35,7 @@ function veureTasques($idTarea){
     $tasques = $mysql->query($sql);
 
     // AND tasques.Usuario_idUsuario LIKE '$id'
-    ?>
-
-    <h1>Llistat de tasques</h1>
     
-<?php
-    
-    echo '<table class = "tablalistado" border="3" width="800px"';
-    echo '<tr><th>ID</th><th>Nom</th><th>Descripció</th><th>Estat</th><th>Data Inici</th><th>Data fi</th></tr>';
-
     $resultado = mysqli_fetch_array($tasques);
 
     if(isset($resultado['Usuario_idUsuario'])){
@@ -55,6 +47,15 @@ function veureTasques($idTarea){
         if($resultado['Usuario_idUsuario']===$id){
             
             // echo $id . " = " . $resultado['Usuario_idUsuario'];
+
+            ?>
+
+            <h1>Llistat de tasques</h1>
+
+            <?php
+
+            echo '<table class = "tablalistado" border="3" width="800px"';
+            echo '<tr><th>ID</th><th>Nom</th><th>Descripció</th><th>Estat</th><th>Data Inici</th><th>Data fi</th></tr>';
 
             echo '<tr align="center">';
             echo '<td>';
@@ -88,29 +89,81 @@ function veureTasques($idTarea){
 
         }
 
-        echo '</table>';
+        else{
+
+            echo "El ID introducido no corresponde a ninguna tarea";
+        
+        }
+
+        echo '</table>';     
 
     }
 
     else{
 
-        echo "Selecciona una ID de tu lista de tareas";
+        echo "El ID introducido no corresponde a ninguna tarea";
 
     }
-
+        return $resultado;
         $mysql->close();
                 
-    }
-    
-    // echo '</table>';
+}
 
-    // $mysql->close();
-
-// }
-
+function modificarTasques($idTarea){
     
+    $resultado=veureTasques($idTarea);
+
+    // print_r($resultado);
+
+    $id = $_SESSION['idUsuario'];
     
+    if(isset($resultado['Usuario_idUsuario'])){
+
+        if($resultado['Usuario_idUsuario']===$id){
+
     ?>
+
+    <form name="MODIFICAR" method="post" action="modificarTasques.php">
+    <p>Actualitzar nom</p>
+    <input type="text" name="titulo" size="25" value="">
+    <p>Actualitzar descripció</p>
+    <input type="text" name="descripcio" id="descripcio">
+    <p>Actualitzar data inici</p>
+    <input type="date" name="dataInici" id="dataInici">
+    <p>Actualitzar data fi </p>
+    <input type="date" name="dataFi" id="dataFi">
+    <p>Actualitzar estat</p>
+    <input list = "estados" name = "estat" id = "estat">
+    <datalist id="estados">
+        <option> Pendent </option>
+        <option> En execució </option>
+        <option> Acabada </option>
+    </datalist>    
+    <!-- <input type="text" name="estat" required> -->
+    <br><br>
+    <input type="submit" value="Confirmar">
+
+</form>
+
+<?php
+
+        }
+    
+    }
+         
+}
+    
+?>
+
+
+
+    
+    
+    
+
+    
+    
+    
     
     
 
