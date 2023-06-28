@@ -1,8 +1,8 @@
 <?php
 
-// if(isset($_POST['idTarea'])){} 
+session_start();
 
-// include "funcionsTasques.php";
+include "funcionsTasques.php";
 
 $idTarea=$_POST['idTarea'];
 
@@ -64,6 +64,8 @@ if(isset($_POST['dataFi']) && ($_POST['dataFi']!="")) {
         $update = $mysql->query($sql);
 
 }
+
+veureTasques($idTarea);
 
 
 
