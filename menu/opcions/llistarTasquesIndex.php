@@ -60,6 +60,26 @@ $mysql->close();
 
 ?>
 
+<script>
+
+    function confirmacion(){
+
+        var respuesta = confirm("Segur que vols eliminar la tasca?");
+        if (respuesta ==true){
+
+            return true;
+
+        }
+
+        else {
+
+            return false;
+
+        }
+    }
+
+</script>
+
 </table>
 
 <br>
@@ -73,7 +93,7 @@ $mysql->close();
     
     <input style="margin-left:20px" type="submit" name="veure" value ="Veure"/>
     <input type="submit" name="modificar" value ="Modificar"/>
-    <input type="submit" name="borrar" value ="Borrar"/>
+    <input type="submit" name="borrar" value ="Borrar" onclick="return confirmacion()"/>
 
 </form>
 

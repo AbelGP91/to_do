@@ -71,7 +71,8 @@ if ($opcioTasques === "Modificar") {
 
 if ($opcioTasques === "Borrar") { 
 
-    // echo "Delete"; 
+    // echo "Delete";
+    borrarTasques($idTarea);
 
 }
 

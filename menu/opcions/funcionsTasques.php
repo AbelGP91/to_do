@@ -91,7 +91,7 @@ function veureTasques($idTarea){
 
 function modificarTasques($idTarea){
     
-    $resultado=veureTasques($idTarea);
+    $resultado = veureTasques($idTarea);
 
     // print_r($resultado);
 
@@ -104,6 +104,7 @@ function modificarTasques($idTarea){
     ?>
 
     <form name="MODIFICAR" method="post" action="modificarTasques.php">
+
     <p>Actualitzar nom</p>
     <input type="text" name="titulo" size="25" value="">
     <p>Actualitzar descripció</p>
@@ -123,7 +124,7 @@ function modificarTasques($idTarea){
     <br><br>
     <input type="submit" value="Confirmar">
 
-</form>
+    </form>
 
 <?php
 
@@ -133,7 +134,41 @@ function modificarTasques($idTarea){
          
 }
     
-?>
+function borrarTasques($idTarea){
+
+    $resultado = veureTasques($idTarea);
+
+    // print_r($resultado);
+
+    $id = $_SESSION['idUsuario'];
+    
+    if(isset($resultado['Usuario_idUsuario'])){
+
+        if($resultado['Usuario_idUsuario']===$id){
+
+            $mysql = new mysqli("localhost","root","","to_do");
+    
+            $sql = "DELETE FROM to_do.tasques WHERE idTasques='$idTarea'" 
+            or die($mysql->error);
+
+            $tasques = $mysql->query($sql);
+
+            echo "<br>";
+            echo "Se ha eliminado la tarea de la Base de Datos";
+
+        }
+
+    }
+
+   
+
+}
+
+    ?>
+
+
+
+        
 
 
 
