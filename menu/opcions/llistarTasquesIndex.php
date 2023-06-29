@@ -11,6 +11,7 @@
 <?php
 
 session_start();
+
 $id = $_SESSION['idUsuario'];
 
 $mysql = new mysqli("localhost","root","","to_do");
@@ -41,8 +42,8 @@ $tasques = $mysql->query($sql);
 echo '<table class = "tablalistado" border="3" width="250px"';
 echo '<tr><th>ID</th><th>Descripción</th></tr>';
 
-
 while ($resultado = mysqli_fetch_array($tasques)){
+
 
     echo '<tr align="center">';
     echo '<td>';
@@ -55,8 +56,6 @@ while ($resultado = mysqli_fetch_array($tasques)){
     echo '</tr>';
     
 }
-
-$mysql->close();
 
 ?>
 
@@ -86,10 +85,32 @@ $mysql->close();
 
 <div style="margin:20px 20px 20px 0px"> 
 
-<form action="opcionsTasques.php" name="idSelect" method="post">
+<form action="opcionsTasques.php" name="Tareas" method="post">
 
-    <p style="margin-left:10px">Introdueix el ID de la tasca desitjada</p><br>
-    <input style="margin-left:20px" type="number" name="idTarea" size="25" required><br><br>
+    <select name="idTarea" style="margin-left:30px" required>
+
+        <option value="" style="">  Selecciona una tasca  </option>
+
+        <!-- <p style="margin-left:10px">Introdueix el ID de la tasca desitjada</p><br> !-->
+        <!-- Aqui ponemos la lógica para introducir los datos segun las ID del Usuario !-->
+        
+        <?php
+
+        $tasquesId = $mysql->query($sql);
+
+        while ($resultadoId = mysqli_fetch_array($tasquesId)){
+        
+            echo '<option value="' . $resultadoId['idTasques'] . '">' . $resultadoId['idTasques'] . '</option>';
+        
+        }
+           
+    $mysql->close();
+
+    ?>
+    </select>
+    <br><br>
+
+    <!-- <input style="margin-left:20px" type="number" name="idTarea" size="25" required><br><br> -->
     
     <input style="margin-left:20px" type="submit" name="veure" value ="Veure"/>
     <input type="submit" name="modificar" value ="Modificar"/>

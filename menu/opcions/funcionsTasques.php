@@ -69,21 +69,30 @@ function veureTasques($idTarea){
 
         }
 
+        /*
+
         else{
 
             echo "El ID introducido no corresponde a ninguna tarea";
         
         }
 
+        */
+
         echo '</table>';     
 
     }
+
+    /*
 
     else{
 
         echo "El ID introducido no corresponde a ninguna tarea";
 
     }
+
+    */
+    
         return $resultado;
         $mysql->close();
                 
