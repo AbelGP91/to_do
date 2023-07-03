@@ -7,7 +7,13 @@ function veureTasques($idTarea){
 
     $id = $_SESSION['idUsuario'];
 
+    require "../../modelo/config.php";
+
+    /*
+
     $mysql = new mysqli("localhost","root","","to_do");
+
+    */
     
     $sql = "SELECT tasques.idTasques, tasques.nom_tasques, tasques.descrip_tasques, tasques.estat_tasques, tasques.inici_tasques, tasques.fi_tasques, tasques.Usuario_idUsuario 
             FROM to_do.tasques WHERE tasques.idTasques LIKE '$idTarea'

@@ -14,8 +14,8 @@
     <label for="Menu">Escull l'opció desitjada</label>
     <br><br>
     <button>
-        <a href="../menu/opcions/crearTascaIndex.php">Crear Tasca</a>
-        <a href="../menu/opcions/llistarTasquesIndex.php">Llistar Tasca</a>
+        <a href="../../vista/crearTascaIndex.php">Crear Tasca</a>
+        <a href="../../vista/llistarTasquesIndex.php">Llistar Tasca</a>
     </button>
         
     </select>

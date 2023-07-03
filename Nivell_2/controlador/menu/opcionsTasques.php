@@ -3,7 +3,10 @@
 session_start();
 
 include "funcionsTasques.php";
+require "../../modelo/config.php";
     
+    /*
+
     $mysql = new mysqli("localhost","root","","to_do");
 
     if ($mysql->connect_error){
@@ -17,6 +20,8 @@ include "funcionsTasques.php";
         echo "Se ha conectado satisfactoriamente a la BDD" . "<br>" . "<br>";
 
     }
+
+    */
 
 
 echo "La ID de la Tasca escollida és: " . $_POST['idTarea'];

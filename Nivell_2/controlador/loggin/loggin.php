@@ -9,7 +9,11 @@
 
 <?php
 
-    
+    require "../../modelo/config.php";
+
+
+    /*
+
     $mysql = new mysqli("localhost","root","","to_do");
 
     if ($mysql->connect_error){
@@ -23,6 +27,8 @@
         echo "Se ha conectado satisfactoriamente a la BDD" . "<br>" . "<br>";
 
     }
+
+    */
 
 $email = $_POST['email'];
 $password = $_POST['password'];

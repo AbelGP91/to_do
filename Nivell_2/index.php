@@ -7,7 +7,7 @@
 </head>
 <body>
     
-        <form action="loggin.php" name = "loggin" method="post">
+        <form action="controlador/loggin/loggin.php" name = "loggin" method="post">
             <p>Introdueix el teu email</p><br>
             <input type="text" name="email" id="email" required>
             <p>Introdueix el teu password</p> <br>

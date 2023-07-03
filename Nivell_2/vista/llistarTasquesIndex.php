@@ -14,6 +14,10 @@ session_start();
 
 $id = $_SESSION['idUsuario'];
 
+require "../modelo/config.php";
+
+/*
+
 $mysql = new mysqli("localhost","root","","to_do");
 
     if ($mysql->connect_error){
@@ -27,6 +31,8 @@ $mysql = new mysqli("localhost","root","","to_do");
         echo "Se ha conectado satisfactoriamente a la BDD" . "<br>" . "<br>";
 
     }
+
+*/
 
 $sql = "SELECT tasques.idTasques,tasques.nom_tasques FROM to_do.tasques WHERE tasques.Usuario_idUsuario LIKE '$id'" 
             or die($mysql->error);
@@ -85,7 +91,7 @@ while ($resultado = mysqli_fetch_array($tasques)){
 
 <div style="margin:20px 20px 20px 0px"> 
 
-<form action="opcionsTasques.php" name="Tareas" method="post">
+<form action="../controlador/menu/opcionsTasques.php" name="Tareas" method="post">
 
     <select name="idTarea" style="margin-left:30px" required>
 
