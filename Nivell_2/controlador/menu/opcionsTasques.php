@@ -4,33 +4,11 @@ session_start();
 
 include "funcionsTasques.php";
 require "../../modelo/config.php";
-    
-    /*
-
-    $mysql = new mysqli("localhost","root","","to_do");
-
-    if ($mysql->connect_error){
-
-        die("Problemas con la conexión a la base de datos");
-
-    }
-
-    else {
-
-        echo "Se ha conectado satisfactoriamente a la BDD" . "<br>" . "<br>";
-
-    }
-
-    */
-
-
+        
 echo "La ID de la Tasca escollida és: " . $_POST['idTarea'];
 $idTarea = $_POST['idTarea'];
 $idTarea = (int)$idTarea;
 echo "<br>";
-
-// var_dump($idTarea);
-// echo "<br>";
 
 $opcioTasques = null;
 
@@ -52,9 +30,6 @@ if (is_null($opcioTasques)){
 
 }
 
-// echo "Toda esta mierda me lleva a ... ";
-//var_dump($opcioTasques);
-
 echo "La opció escollida és: " . $opcioTasques;
 echo "<br>" . "<br>";
 
@@ -62,21 +37,18 @@ echo "<br>" . "<br>";
 
 if ($opcioTasques === "Veure") { 
 
-    // echo "Veure";
     veureTasques($idTarea); 
 
 }
 
 if ($opcioTasques === "Modificar") { 
 
-    // echo "Mod";
     modificarTasques($idTarea); 
 
 }
 
 if ($opcioTasques === "Borrar") { 
 
-    // echo "Delete";
     borrarTasques($idTarea);
 
 }

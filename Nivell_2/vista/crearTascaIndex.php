@@ -28,7 +28,6 @@
             <option> En execució </option>
             <option> Acabada </option>
         </datalist>    
-        <!-- <input type="text" name="estat" required> -->
         <br><br>
         <input type="submit" value="Confirmar">
     </form>

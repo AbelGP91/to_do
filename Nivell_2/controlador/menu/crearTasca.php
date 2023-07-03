@@ -37,13 +37,6 @@
     echo "Fecha Fin: " . $dataFi . "<br>";
     echo "Estado: " . $estat . "<br>";
 
-    /*
-    
-    $mysql->query("INSERT INTO tasques" . "nom_tasques" . "VALUES" . "($titulo)") or
-        die($mysql->error);
-
-    */    
-
     $mysql->close();
     
 ?>

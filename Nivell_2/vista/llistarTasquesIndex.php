@@ -16,24 +16,6 @@ $id = $_SESSION['idUsuario'];
 
 require "../modelo/config.php";
 
-/*
-
-$mysql = new mysqli("localhost","root","","to_do");
-
-    if ($mysql->connect_error){
-
-        die("Problemas con la conexión a la base de datos");
-
-    }
-
-    else {
-
-        echo "Se ha conectado satisfactoriamente a la BDD" . "<br>" . "<br>";
-
-    }
-
-*/
-
 $sql = "SELECT tasques.idTasques,tasques.nom_tasques FROM to_do.tasques WHERE tasques.Usuario_idUsuario LIKE '$id'" 
             or die($mysql->error);
 
@@ -57,7 +39,6 @@ while ($resultado = mysqli_fetch_array($tasques)){
     echo '</td>';
     echo '<td>';
     echo $resultado['nom_tasques'];
-    // echo '<button type="button">Modificar</button>' . '<button type="button">Eliminar</button>';
     echo '</td>';
     echo '</tr>';
     
@@ -96,10 +77,7 @@ while ($resultado = mysqli_fetch_array($tasques)){
     <select name="idTarea" style="margin-left:30px" required>
 
         <option value="" style="">  Selecciona una tasca  </option>
-
-        <!-- <p style="margin-left:10px">Introdueix el ID de la tasca desitjada</p><br> !-->
-        <!-- Aqui ponemos la lógica para introducir los datos segun las ID del Usuario !-->
-        
+                
         <?php
 
         $tasquesId = $mysql->query($sql);
@@ -115,9 +93,7 @@ while ($resultado = mysqli_fetch_array($tasques)){
     ?>
     </select>
     <br><br>
-
-    <!-- <input style="margin-left:20px" type="number" name="idTarea" size="25" required><br><br> -->
-    
+        
     <input style="margin-left:20px" type="submit" name="veure" value ="Veure"/>
     <input type="submit" name="modificar" value ="Modificar"/>
     <input type="submit" name="borrar" value ="Borrar" onclick="return confirmacion()"/>

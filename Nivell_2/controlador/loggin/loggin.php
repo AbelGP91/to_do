@@ -11,25 +11,6 @@
 
     require "../../modelo/config.php";
 
-
-    /*
-
-    $mysql = new mysqli("localhost","root","","to_do");
-
-    if ($mysql->connect_error){
-
-        die("Problemas con la conexión a la base de datos");
-
-    }
-
-    else {
-
-        echo "Se ha conectado satisfactoriamente a la BDD" . "<br>" . "<br>";
-
-    }
-
-    */
-
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -39,16 +20,6 @@ $sql = "SELECT usuari.email_usuari, usuari.password_usuari, usuari.idUsuario FRO
 $dadesLoggin = $mysql->query($sql);
 
 $resultado = mysqli_fetch_array($dadesLoggin);
-
-// var_dump($resultado);
-
-/* if (empty($email) or (empty($password))){
-
-    header('Location:errorLog.php');
-
-}
-
-*/
 
 if (is_null($resultado)){  
 
