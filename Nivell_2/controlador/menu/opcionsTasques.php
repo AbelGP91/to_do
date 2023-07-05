@@ -3,12 +3,12 @@
 session_start();
 
 include "funcionsTasques.php";
-require "../../modelo/config.php";
+require "../../config.php";
         
-echo "La ID de la Tasca escollida és: " . $_POST['idTarea'];
+// echo "La ID de la Tasca escollida és: " . $_POST['idTarea'];
 $idTarea = $_POST['idTarea'];
 $idTarea = (int)$idTarea;
-echo "<br>";
+// echo "<br>";
 
 $opcioTasques = null;
 
@@ -30,8 +30,8 @@ if (is_null($opcioTasques)){
 
 }
 
-echo "La opció escollida és: " . $opcioTasques;
-echo "<br>" . "<br>";
+// echo "La opció escollida és: " . $opcioTasques;
+// echo "<br>" . "<br>";
 
 
 

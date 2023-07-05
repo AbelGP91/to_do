@@ -11,7 +11,7 @@
     <?php include "vista/templates/header.php"; ?>
     
     <main class="flex justify-center items-center h-screen">
-        <form class="bg-blue-500 p-4 rounded-lg shadow-md"action="controlador/loggin/loggin.php" name = "loggin" method="post">
+        <form class="bg-blue-500 p-4 rounded-lg shadow-md -mt-5"action="controlador/loggin/loggin.php" name = "loggin" method="post">
             <p class="text-white -mb-5 font-bold">Introdueix el teu email</p><br>
             <input class="w-full px-3 py-2 rounded-sm mb-3" type="text" name="email" id="email" required>
             <p class="text-white -mb-5 font-bold" >Introdueix el teu password</p> <br>

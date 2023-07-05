@@ -1,11 +1,13 @@
 
+<script src="https://cdn.tailwindcss.com"></script>
+
 <?php
 
 function veureTasques($idTarea){
 
     $id = $_SESSION['idUsuario'];
 
-    require "../../modelo/config.php";
+    require "../../config.php";
         
     $sql = "SELECT tasques.idTasques, tasques.nom_tasques, tasques.descrip_tasques, tasques.estat_tasques, tasques.inici_tasques, tasques.fi_tasques, tasques.Usuario_idUsuario 
             FROM to_do.tasques WHERE tasques.idTasques LIKE '$idTarea'
@@ -22,30 +24,30 @@ function veureTasques($idTarea){
                         
             ?>
 
-            <h1>Llistat de tasques</h1>
-
+            <?php include "../../vista/templates/header.php";?>
+            
             <?php
 
-            echo '<table class = "tablalistado" border="3" width="800px"';
-            echo '<tr><th>ID</th><th>Nom</th><th>Descripció</th><th>Estat</th><th>Data Inici</th><th>Data fi</th></tr>';
+            echo '<table class="flex h-screen justify-center items-center -mt-20"';
+            echo '<tr><th class="border border-slate-700 p-3 bg-blue-500 text-white font-bold">ID</th><th class="border border-slate-700 p-3 bg-blue-500 text-white font-bold">Nom</th><th class="border border-slate-700 p-3 bg-blue-500 text-white font-bold">Descripció</th><th class="border border-slate-700 p-3 bg-blue-500 text-white font-bold">Estat</th><th class="border border-slate-700 p-3 bg-blue-500 text-white font-bold">Data Inici</th><th class="border border-slate-700 p-3 bg-blue-500 text-white font-bold">Data fi</th></tr>';
 
             echo '<tr align="center">';
-            echo '<td>';
+            echo '<td class="border border-slate-700 rounded-lg p-5 font-bold">';
             echo $resultado['idTasques'];
             echo '</td>';
-            echo '<td>';
+            echo '<td class="border border-slate-700 rounded-lg p-5">';
             echo $resultado['nom_tasques'];
             echo '</td>';
-            echo '<td>';
+            echo '<td class="border border-slate-700 rounded-lg p-5">';
             echo $resultado['descrip_tasques'];
             echo '</td>';
-            echo '<td>';
+            echo '<td class="border border-slate-700 rounded-lg p-5">';
             echo $resultado['estat_tasques'];
             echo '</td>';
-            echo '<td>';
+            echo '<td class="border border-slate-700 rounded-lg p-5">';
             echo $resultado['inici_tasques'];
             echo '</td>';
-            echo '<td>';
+            echo '<td class="border border-slate-700 rounded-lg p-5">';
                         
                 if($resultado['fi_tasques']==="0000-00-00 00:00:00"){
 
@@ -59,13 +61,16 @@ function veureTasques($idTarea){
 
         }
         
-        echo '</table>';     
+        echo '</table>';   
+        
+        include "../../vista/templates/footer.php";
 
     }
         
         return $resultado;
         $mysql->close();
-                
+
+                        
 }
 
 function modificarTasques($idTarea){
@@ -113,6 +118,10 @@ function borrarTasques($idTarea){
 }
 
     ?>
+
+    
+
+    
 
 
 

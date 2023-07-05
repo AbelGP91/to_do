@@ -1,8 +1,8 @@
-
-<nav class="bg-blue-500 p-4">
+<header class="">
+<nav class="bg-blue-500 p-6">
     <div class="flex justify-between items-center">
       <div>
-        <a href="#" class="text-white text-lg font-bold">Logo</a>
+        <a href="#" class="text-white text-lg font-bold">IT Academy</a>
       </div>
       <div>
         <a href="#" class="text-white hover:text-blue-200 px-4">Home</a>
@@ -13,3 +13,4 @@
     </div>
     
   </nav>
+  </header>
